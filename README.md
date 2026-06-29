@@ -6,3 +6,6 @@ FS default code presents the planetary parameters of a super-Earth of 8 Earth ma
 FOC default code presents the planetary parameters of a super-Earth of 2 Earth masses, for Shear LNs.
 
 In the repo "Earth_code", there are the counterparts of the code illustrated above, but in a more basic version. I have decided to present it here for the clarity of the discussion and because some of the plots displayed in my Master's thesis have been obtained from these codes.
+FS default code presents the planetary parameters of the PREM-like Earth discussed in my work, for Shear LNs.
+FOC default code presents the planetary parameters of the PREM-like Earth discussed in my work, for Shear LNs.
+
