@@ -156,29 +156,3 @@ ax = gca;
 ax.XScale = 'log';
 xticks(0:1:10)
 hold off
-
-
-%COLORMAP PLOTS OPTIONS
-% figure;
-% hold on;
-% cmap = darken * color_style(length(mu_mantle_range)); % Generate a colormap
-% colormap(color_style);               % Set the colormap for the figure
-% cb = colorbar;               % Create colorbar
-% 
-% %colorbar setting
-% cb.Label.String = '\mu (Mantle) [Pa]';
-% cb.Ticks = linspace(0, 1, length(mu_mantle_range)); % Positions tick
-% cb.TickLabels = cellstr(num2str(mu_mantle_range', '%.1e')); % Labels
-% 
-% %colormap plot
-% for j = 1:length(mu_mantle_range)
-%     plot(n, h_results_inc(:, j), '-b','LineWidth',1,'Marker','o',...
-%         'MarkerSize',2, 'Color', cmap(j,:), 'MarkerFaceColor', cmap(j,:));
-% end
-% title('Love number h (Incompressible)');
-% xlabel('Harmonic degree n');
-% ylabel('h_n');
-% grid on;
-% hold off
-
-
