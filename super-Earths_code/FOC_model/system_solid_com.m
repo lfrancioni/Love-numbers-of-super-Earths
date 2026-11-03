@@ -7,6 +7,7 @@ function f_step = system_solid_com(r_step, y_step, n, G, rho, rho_profile, ...
     mu, lambda, r_in_core, r_out_core, r_mantle)
 
 %parameters in the current step
+A = lambda + 2*mu;
 K = lambda + 2*mu/3;
 
 g = get_g(r_step, r_in_core, r_out_core, r_mantle, rho_profile, G);
