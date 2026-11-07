@@ -23,9 +23,9 @@ G = 1/pi;
 r_core = r_core/L_scale;
 r_mantle = r_mantle/L_scale;
 
-rho_profile = rho_profile / Rho_scale; %in [kg / m^3]
-mu_profile = (T_scale^2 / (L_scale^2 * Rho_scale)) * mu_profile; %in [Pa]
-lambda_profile = (T_scale^2 / (L_scale^2 * Rho_scale)) * lambda_profile; %in [Pa]
+rho_profile = rho_profile / Rho_scale;
+mu_profile = (T_scale^2 / (L_scale^2 * Rho_scale)) * mu_profile; 
+lambda_profile = (T_scale^2 / (L_scale^2 * Rho_scale)) * lambda_profile; 
 
 passo = passo/L_scale;
 r0 = r0/L_scale;
