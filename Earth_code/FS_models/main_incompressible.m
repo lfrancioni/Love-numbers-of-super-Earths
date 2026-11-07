@@ -4,12 +4,12 @@ function [H, K, L] = main_incompressible(n, Love_type)
 % n = 2;
 % Love_type = 'Tidal';
 
-%Planetary and integration parameters--------------------------------------
+%PARAMETERS SETTING--------------------------------------
 G = 6.67 * 10^(-11);  %in [N m^2 / kg^2]
 
 [a, r_core, r_mantle, rho_profile, mu_profile, lambda_profile] = ...
     set_parameters();
-%lambda_profile will be unused in this incompressible case
+%lambda_profile will be unused in the incompressible case
 
 [passo, r0, r, N] = set_integration(a, r_core);
 
@@ -20,7 +20,7 @@ G = 6.67 * 10^(-11);  %in [N m^2 / kg^2]
     mu_profile, lambda_profile, passo, r0, r);
 
 
-%Analytical solutions at starting point r0---------------------------------
+%STARTING SOLUTIONS IN r0---------------------------------
 rho_0 = get_parameter(r0, r_core, r_mantle, rho_profile);
 mu_0 = get_parameter(r0, r_core, r_mantle, mu_profile);
 g_0 = get_g(r0, r_core, r_mantle, rho_profile, G);
@@ -49,12 +49,12 @@ y4_s0_3 = 0;
 y5_s0_3 = r0^n;
 y6_s0_3 = (2*n +1)*(r0^(n-1));
 
-%column arrays of starting analytical solutions
+%column arrays of starting sets
 Y_s0_1 = [y1_s0_1; y2_s0_1; y3_s0_1; y4_s0_1; y5_s0_1; y6_s0_1];
 Y_s0_2 = [y1_s0_2; y2_s0_2; y3_s0_2; y4_s0_2; y5_s0_2; y6_s0_2];
 Y_s0_3 = [y1_s0_3; y2_s0_3; y3_s0_3; y4_s0_3; y5_s0_3; y6_s0_3];
 
-%matrix of starting solutions
+%matrix of starting sets
 Y_s0 = [Y_s0_1, Y_s0_2, Y_s0_3];
 
 
@@ -67,7 +67,7 @@ Y_final = RK4_solid_incom(2, N, passo, r, n, G, rho_profile, ...
 
 
 %SURFACE BOUNDARY CONDITIONS TO PRODUCE THE LINEAR COMBINATION OF y
-%SOLUTIONS FOR THE CASE ---------------------------------------------------
+%SOLUTION ---------------------------------------------------
 g_N = get_g(a, r_core, r_mantle, rho_profile, G);
 
 My = [Y_final(3,1), Y_final(3,2), Y_final(3,3); ...
@@ -83,14 +83,14 @@ switch Love_type
         CC = [0; (2*n + 1)*g_N/(4*pi*G*a*n*(n+1)); 0];                                                       
 end
 
-Cost = My \ CC;  %Cost = (C1, C2, C3) for the correct linear combination 
+Const = My \ CC;  %Cost = (C1, C2, C3) for the correct linear combination 
                  %at the surface
 
 
 %LOVE NUMBERS--------------------------------------------------------------
-y1 = Cost(1)*Y_final(1,1) + Cost(2)*Y_final(1,2) + Cost(3)*Y_final(1,3);
-y2 = Cost(1)*Y_final(2,1) + Cost(2)*Y_final(2,2) + Cost(3)*Y_final(2,3);
-y5 = Cost(1)*Y_final(5,1) + Cost(2)*Y_final(5,2) + Cost(3)*Y_final(5,3);
+y1 = Const(1)*Y_final(1,1) + Const(2)*Y_final(1,2) + Const(3)*Y_final(1,3);
+y2 = Const(1)*Y_final(2,1) + Const(2)*Y_final(2,2) + Const(3)*Y_final(2,3);
+y5 = Const(1)*Y_final(5,1) + Const(2)*Y_final(5,2) + Const(3)*Y_final(5,3);
 
 
 switch Love_type
