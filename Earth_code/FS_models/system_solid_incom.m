@@ -1,7 +1,7 @@
 function f_step = system_solid_incom(r_step, y_step, n, G, rho, rho_profile, ...
     mu, r_core, r_mantle)
 
-%parameters in the current step
+%parameters in the actual step
 g = get_g(r_step, r_core, r_mantle, rho_profile, G);
 
 %matrix 6x3
