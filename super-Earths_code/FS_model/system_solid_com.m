@@ -5,7 +5,7 @@
 function f_step = system_solid_com(r_step, y_step, n, G, rho, rho_profile, ...
     mu, lambda, r_core, r_mantle)
 
-%parameters in the current step
+%parameters in the actual step
 A = lambda + 2*mu;
 K = lambda + 2*mu/3;
 
