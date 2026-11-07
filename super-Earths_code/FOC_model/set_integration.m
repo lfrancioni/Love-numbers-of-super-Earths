@@ -2,7 +2,7 @@
 % --- Set the numerical integration parameters ---------------------------%
 %-------------------------------------------------------------------------%
 % --- INTEGRATE FROM NEAR THE CENTER AND NOT FROM CMB DUE TO -------------%
-% --- INSTABILITIES AND MISSING DEGREES LNs ----------------,,------------%
+% --- INSTABILITIES AND MISSING DEGREES LNs ------------------------------%
 %-------------------------------------------------------------------------%
 
 
