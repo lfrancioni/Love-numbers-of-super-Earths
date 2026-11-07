@@ -7,7 +7,7 @@
 clear clc
 
 %select 'Tidal' / 'Load' / 'Shear' type of LNs
-Love_type = 'Shear';  
+Love_type = 'Tidal';  
 
 N_max = 25;  %max harmonic degree
 n = 2:N_max;  %harmonic degree
@@ -26,15 +26,15 @@ l_array_c = zeros(1, N_max-1);
 for i = 2:N_max
     [h, k, l] = main_incompressible(i, Love_type);
     h_array_inc(i-1) = h;
-    k_array_inc(i-1) = i*k;
-    l_array_inc(i-1) = i*l;
+    k_array_inc(i-1) = k;
+    l_array_inc(i-1) = l;
 end
 
 for i = 2:N_max
     [h, k, l] = main_compressible(i, Love_type);
     h_array_c(i-1) = h;
-    k_array_c(i-1) = i*k;
-    l_array_c(i-1) = i*l;
+    k_array_c(i-1) = k;
+    l_array_c(i-1) = l;
 end
 
 
