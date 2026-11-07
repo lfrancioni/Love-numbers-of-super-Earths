@@ -7,12 +7,12 @@ r_mantle = 6290000;  %border of mantle
 
 % %HOMOGENEOUS DATA
 % rho_profile = [5500, 5500, 5500];           %in [kg / m^3]
-% mu_profile = [1.45e11, 1.45e11, 1.45e11];   %in [Pa]
-% lambda_profile = [3.52e11, 3.52e11, 3.52e11];  %in [Pa]
+% mu_profile = [145e9, 145e9, 145e9];   %in [Pa]
+% lambda_profile = [352e9, 352e9, 352e9];  %in [Pa]
 
 %PREM-LIKE DATA
 rho_profile = [11000, 4800, 3200];      %in [kg / m^3]
-mu_profile = [2.5e8, 1.9e11, 5.7e10];   %in [Pa]
-lambda_profile = [9.6e11, 3e11, 7e10];  %in [Pa]
+mu_profile = [0.25e9, 190e9, 57e9];   %in [Pa]
+lambda_profile = [960e9, 300e9, 70e9];  %in [Pa]
 
 end
