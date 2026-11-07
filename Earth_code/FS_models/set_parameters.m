@@ -5,7 +5,7 @@ a = 6370000;  %planetary radius, in [m]
 r_core = 3480000;  %border of core
 r_mantle = 6290000;  %border of mantle
 
-% %HOMOGENEOUS DATA
+% %HOMOGENEOUS DATA [KELVIN SPHERE]
 % rho_profile = [5500, 5500, 5500];           %in [kg / m^3]
 % mu_profile = [145e9, 145e9, 145e9];   %in [Pa]
 % lambda_profile = [352e9, 352e9, 352e9];  %in [Pa]
