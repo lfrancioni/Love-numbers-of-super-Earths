@@ -3,9 +3,16 @@ function [a, G, r_in_core, r_out_core, r_mantle, rho_profile, mu_profile, ...
     r_mantle, rho_profile, mu_profile, lambda_profile, passo, r0, r)
 
 %Scaling parameters
+%for lenghts
 L_scale = a;
-Rho_scale = 5500; %in [kg / m^3]
+
+%for densities
+Rho_scale = (rho_profile(1) + rho_profile(2) + rho_profile(3) + ...
+    rho_profile(4)) / 4;
+
+%for times
 T_scale = 1 / sqrt(Rho_scale * G * pi);
+
 
 %Scaling
 a = a/L_scale;
